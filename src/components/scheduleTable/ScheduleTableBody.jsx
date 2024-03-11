@@ -6,12 +6,15 @@ import {
   CustomTableBody,
   CustomTableCellBody,
 } from "../reusedComponents/customTable/CustomTable";
-const ScheduleTableBody = () => {
+import ScheduleTableThemeItem from "./ScheduleTableThemeItem";
+const ScheduleTableBody = ({ trainingDate, location, theme }) => {
   return (
     <CustomTableBody>
-      <CustomTableCellBody>23.12.2000 19:00</CustomTableCellBody>
-      <CustomTableCellBody>ул. Маршала Еврея 21</CustomTableCellBody>
-      <CustomTableCellBody></CustomTableCellBody>
+      <CustomTableCellBody>{trainingDate}</CustomTableCellBody>
+      <CustomTableCellBody>{location}</CustomTableCellBody>
+      <CustomTableCellBody>
+        <ScheduleTableThemeItem theme={theme} />
+      </CustomTableCellBody>
     </CustomTableBody>
   );
 };

@@ -1,13 +1,16 @@
-import Table from "@mui/material/Table";
-import styled from "styled-components";
-import ScheduleTableHead from "./CheduleTableHead";
+import { CustomTable } from "../reusedComponents/customTable/CustomTable";
+import ScheduleTableHead from "./ScheduleTableHead";
 import ScheduleTableBody from "./ScheduleTableBody";
 const ScheduleTable = () => {
   return (
-    <Table>
+    <CustomTable>
       <ScheduleTableHead />
-      <ScheduleTableBody/>
-    </Table>
+      <ScheduleTableBody
+        trainingDate={"23.12.2000 19:00"}
+        location={"ул. Маршала Еврея 21"}
+        theme={"Тренировка"}
+      />
+    </CustomTable>
   );
 };
 

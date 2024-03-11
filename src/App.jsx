@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Header from "./components/Header";
 import SchedulePage from "./Pages/SchedulePage";
+import {Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
     <Wrapper>
       <Header />
       <Container>
-        <SchedulePage />
+        <Routes>
+          <Route path="/" element={<SchedulePage />} />
+        </Routes>
       </Container>
     </Wrapper>
   );
