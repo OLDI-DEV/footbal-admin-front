@@ -4,13 +4,16 @@ import Header from "./components/Header";
 import SchedulePage from "./pages/SchedulePage";
 import {Routes, Route } from "react-router-dom";
 import NextTrainingPage from "./pages/NextTrainingPage";
+import SearchField from "./components/reusedComponents/SearchField";
 import "./App.css";
 
 function App() {
   return (
     <Wrapper>
       <Header />
+      
       <Container>
+        <SearchField/>
         <Routes>
           <Route path="/" element={<SchedulePage />} />
           <Route path="/nextTraining" element={<NextTrainingPage />} />
@@ -39,4 +42,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width:100%;
+  flex-direction:column;
+  gap:24px;
 `;
