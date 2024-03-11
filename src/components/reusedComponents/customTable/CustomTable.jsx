@@ -43,6 +43,7 @@ export const CustomTableCellRow = styled(TableCell)`
   display: flex !important;
   justify-content: center !important;
   background-color: #fff !important;
+
 `;
 
 export const CustomTable = styled(Table)`
@@ -62,13 +63,13 @@ export const CustomTableRow = styled(TableRow)`
   font-weight: 400 !important;
   line-height: 24px !important;
   text-align: center !important;
-  display: flex;
   background-color: #fff !important;
   border-bottom: 1px solid #e6e6e6 !important;
 `;
 
 export const CustomTableHead = styled(TableHead)``;
-export const CustomTableBody = styled(TableBody)``;
+export const CustomTableBody = styled(TableBody)`
+`;
 
 /* export const TableContainer = styled.div`
   max-height: 90vh ;
