@@ -29,7 +29,6 @@ const AddStatsModal = ({ closeMoreInfoModal, playerStatsProps }) => {
         </InfoPlayer>
         <StatsPlayer>
           <MoreInfoTitle>Добавить статистику игрока</MoreInfoTitle>
-
           <CustomTextField
             defaultValue={inputSpeed}
             label={"Скорость"}
@@ -58,6 +57,9 @@ const AddStatsModal = ({ closeMoreInfoModal, playerStatsProps }) => {
         >
           <CloseModalIcon />
         </CloseIconContainer>
+        <ButtonContainer>
+          <SaveBtn>Сохранить</SaveBtn>
+        </ButtonContainer>
       </MoreInfoModalContainer>
     </MoreInfoModalWrapper>
   );
@@ -151,4 +153,24 @@ const MoreInfoStat = styled.span`
 const CustomTextField = styled(TextField)`
   width: 175px;
   padding: 16px 12px;
+`;
+
+const ButtonContainer = styled.div`
+padding:0 32px 24px ;
+width:100%;
+`
+
+const SaveBtn = styled.button`
+  width: fit-content;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background: #4a69bd;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 `;
