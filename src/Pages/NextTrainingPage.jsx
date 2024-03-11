@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import NextTrainingTable from "../components/nextTrainingTable.jsx/NextTrainingTable";
+import NextTrainingTable from "../components/nextTrainingTable/NextTrainingTable";
 const NextTrainingPage = () => {
   return (
     <>

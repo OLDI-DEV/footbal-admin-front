@@ -19,7 +19,7 @@ const NextTrainingTable = () => {
         datePay={"23.12.2023 19:00"}
         countTraining={1}
         isVisiting={false}
-        isActiveStats={false}
+        isActiveStats={true}
         playerStatsProps={playerStats}
       />
     </CustomTable>

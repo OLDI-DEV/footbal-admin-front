@@ -1,8 +1,4 @@
-import styled from "styled-components";
 import {
-  CustomTableCellHead,
-  CustomTableRow,
-  CustomTableHead,
   CustomTableBody,
   CustomTableCellBody,
 } from "../reusedComponents/customTable/CustomTable";

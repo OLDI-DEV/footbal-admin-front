@@ -12,6 +12,7 @@ const NextTrainingTableHead = () => {
         <CustomTableCellHead>Посещение</CustomTableCellHead>
         <CustomTableCellHead>Дата оплаты</CustomTableCellHead>
         <CustomTableCellHead>Кол-во тренировок</CustomTableCellHead>
+
       </CustomTableRow>
     </CustomTableHead>
   );

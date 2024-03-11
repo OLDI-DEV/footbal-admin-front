@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Header from "./components/Header";
-import SchedulePage from "./Pages/SchedulePage";
+import SchedulePage from "./pages/SchedulePage";
 import {Routes, Route } from "react-router-dom";
-import NextTrainingPage from "./Pages/NextTrainingPage";
+import NextTrainingPage from "./pages/NextTrainingPage";
 import "./App.css";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Container>
         <Routes>
-          {/* <Route path="/" element={<SchedulePage />} /> */}
+          <Route path="/" element={<SchedulePage />} />
           <Route path="/nextTraining" element={<NextTrainingPage />} />
         </Routes>
       </Container>
