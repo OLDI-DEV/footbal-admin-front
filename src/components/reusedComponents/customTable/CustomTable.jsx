@@ -66,10 +66,8 @@ export const CustomTableRow = styled(TableRow)`
   border-bottom: 1px solid #e6e6e6 !important;
 `;
 
-export const CustomTableHead = styled(TableHead)`
-`;
-export const CustomTableBody = styled(TableBody)`
-flex-direction:row;`;
+export const CustomTableHead = styled(TableHead)``;
+export const CustomTableBody = styled(TableBody)``;
 
 /* export const TableContainer = styled.div`
   max-height: 90vh ;

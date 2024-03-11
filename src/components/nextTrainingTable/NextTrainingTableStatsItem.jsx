@@ -25,7 +25,7 @@ const NextTrainingTableStatsItem = ({ isActiveStats, playerStatsProps }) => {
         {isActiveStatsModal && (
           <AddStatsModal
             playerStatsProps={playerStatsProps}
-            closeMoreInfoModal={closeStatsModal}
+            closeStatsModal={closeStatsModal}
           />
         )}
       </>
@@ -54,6 +54,7 @@ const StatsContainer = styled.div`
   padding: 12px 24px;
   border-radius: 4px;
   cursor: ${(props) => (props.isActiveStats ? "pointer" : "default")};
+  margin: 0 auto;
 `;
 
 const StatsLabel = styled.div`

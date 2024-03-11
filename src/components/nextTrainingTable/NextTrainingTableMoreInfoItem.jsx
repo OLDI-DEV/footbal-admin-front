@@ -12,7 +12,6 @@ const NextTrainingTableMoreInfoItem = ({ playerStatsProps }) => {
   };
   return (
     <>
-      {" "}
       <MoreInfoContainer
         onClick={() => {
           openMoreInfoModal();
@@ -43,6 +42,7 @@ const MoreInfoContainer = styled.div`
   border-radius: 4px;
   border: 1px solid #4a69bd;
   padding: 12px 24px;
+  margin: 0 auto;
 `;
 
 const MoreInfoLabel = styled.div`

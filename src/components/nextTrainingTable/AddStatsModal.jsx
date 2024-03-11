@@ -2,17 +2,21 @@ import styled from "styled-components";
 import { CloseModalIcon } from "../reusedComponents/Icons";
 import { TextField } from "@mui/material";
 import { useState } from "react";
-const AddStatsModal = ({ closeMoreInfoModal, playerStatsProps }) => {
+const AddStatsModal = ({ playerStatsProps, closeStatsModal }) => {
   const [inputDribbling, setInputDribbling] = useState(
     playerStatsProps.dribbling
   );
   const [inputSpeed, setInputSpeed] = useState(playerStatsProps.speed);
   const [inputJump, setInputJump] = useState(playerStatsProps.jump);
   const [inputShot, setInputShot] = useState(playerStatsProps.shot);
+  const onSubmit = () => {
+    closeStatsModal();
+  };
+
   return (
     <MoreInfoModalWrapper
       onClick={() => {
-        closeMoreInfoModal();
+        closeStatsModal();
       }}
     >
       <MoreInfoModalContainer onClick={(e) => e.stopPropagation()}>
@@ -52,13 +56,19 @@ const AddStatsModal = ({ closeMoreInfoModal, playerStatsProps }) => {
         </StatsPlayer>
         <CloseIconContainer
           onClick={() => {
-            closeMoreInfoModal();
+            closeStatsModal();
           }}
         >
           <CloseModalIcon />
         </CloseIconContainer>
         <ButtonContainer>
-          <SaveBtn>Сохранить</SaveBtn>
+          <SaveBtn
+            onClick={() => {
+              onSubmit();
+            }}
+          >
+            Сохранить
+          </SaveBtn>
         </ButtonContainer>
       </MoreInfoModalContainer>
     </MoreInfoModalWrapper>
@@ -156,9 +166,11 @@ const CustomTextField = styled(TextField)`
 `;
 
 const ButtonContainer = styled.div`
-padding:0 32px 24px ;
-width:100%;
-`
+  padding: 0 32px 24px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const SaveBtn = styled.button`
   width: fit-content;
@@ -173,4 +185,5 @@ const SaveBtn = styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  cursor: pointer;
 `;
