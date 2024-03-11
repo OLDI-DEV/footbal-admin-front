@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { CloseModalIcon } from "../reusedComponents/Icons";
-const MoreInfoModal = ({ closeMoreInfoModal, playerStatsProps }) => {
+import { TextField } from "@mui/material";
+import { useState } from "react";
+const AddStatsModal = ({ closeMoreInfoModal, playerStatsProps }) => {
+  const [inputDribbling, setInputDribbling] = useState(
+    playerStatsProps.dribbling
+  );
+  const [inputSpeed, setInputSpeed] = useState(playerStatsProps.speed);
+  const [inputJump, setInputJump] = useState(playerStatsProps.jump);
+  const [inputShot, setInputShot] = useState(playerStatsProps.shot);
   return (
     <MoreInfoModalWrapper
       onClick={() => {
@@ -20,23 +28,28 @@ const MoreInfoModal = ({ closeMoreInfoModal, playerStatsProps }) => {
           </StatsBlock>
         </InfoPlayer>
         <StatsPlayer>
-          <MoreInfoTitle>Статистика игрока</MoreInfoTitle>
-          <StatsBlock>
-            <MoreInfoLabel>Дриблинг</MoreInfoLabel>
-            <MoreInfoStat>{playerStatsProps.dribbling}</MoreInfoStat>
-          </StatsBlock>
-          <StatsBlock>
-            <MoreInfoLabel>Скорость</MoreInfoLabel>
-            <MoreInfoStat>{playerStatsProps.speed}</MoreInfoStat>
-          </StatsBlock>
-          <StatsBlock>
-            <MoreInfoLabel>Удар</MoreInfoLabel>
-            <MoreInfoStat>{playerStatsProps.shot}</MoreInfoStat>
-          </StatsBlock>
-          <StatsBlock>
-            <MoreInfoLabel>Прыжок</MoreInfoLabel>
-            <MoreInfoStat>{playerStatsProps.jump}</MoreInfoStat>
-          </StatsBlock>
+          <MoreInfoTitle>Добавить статистику игрока</MoreInfoTitle>
+
+          <CustomTextField
+            defaultValue={inputSpeed}
+            label={"Скорость"}
+            onChange={(e) => setInputSpeed(e.target.value)}
+          />
+          <CustomTextField
+            defaultValue={inputShot}
+            label={"Удар"}
+            onChange={(e) => setInputShot(e.target.value)}
+          />
+          <CustomTextField
+            defaultValue={inputJump}
+            label={"Прыжок"}
+            onChange={(e) => setInputJump(e.target.value)}
+          />
+          <CustomTextField
+            defaultValue={inputDribbling}
+            label={"Дриблинг"}
+            onChange={(e) => setInputDribbling(e.target.value)}
+          />
         </StatsPlayer>
         <CloseIconContainer
           onClick={() => {
@@ -50,7 +63,7 @@ const MoreInfoModal = ({ closeMoreInfoModal, playerStatsProps }) => {
   );
 };
 
-export default MoreInfoModal;
+export default AddStatsModal;
 
 const CloseIconContainer = styled.div`
   position: absolute;
@@ -133,4 +146,9 @@ const MoreInfoStat = styled.span`
   font-weight: 400;
   line-height: 24px;
   text-align-last: left;
+`;
+
+const CustomTextField = styled(TextField)`
+  width: 175px;
+  padding: 16px 12px;
 `;

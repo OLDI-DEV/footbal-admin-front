@@ -25,7 +25,10 @@ const NextTrainingTableBody = ({
         <NextTrainingTableMoreInfoItem playerStatsProps={playerStatsProps} />
       </CustomTableCellBody>
       <CustomTableCellBody>
-        <NextTrainingTableStatsItem isActiveStats={isActiveStats} />
+        <NextTrainingTableStatsItem
+          isActiveStats={isActiveStats}
+          playerStatsProps={playerStatsProps}
+        />
       </CustomTableCellBody>
     </CustomTableBody>
   );

@@ -1,13 +1,34 @@
 import styled from "styled-components";
 import { StatsIcon, NoStatsIcon } from "../reusedComponents/Icons";
-const NextTrainingTableStatsItem = ({ isActiveStats }) => {
-  console.log(isActiveStats);
+import { useState } from "react";
+import AddStatsModal from "./AddStatsModal";
+const NextTrainingTableStatsItem = ({ isActiveStats, playerStatsProps }) => {
+  const [isActiveStatsModal, setIsActiveStatsModal] = useState(false);
+  const openStatsModal = () => {
+    setIsActiveStatsModal(true);
+  };
+  const closeStatsModal = () => {
+    setIsActiveStatsModal(false);
+  };
   if (isActiveStats === true) {
     return (
-      <StatsContainer isActiveStats={isActiveStats}>
-        <StatsIcon />
-        <StatsLabel isActiveStats={isActiveStats}>Статистика</StatsLabel>
-      </StatsContainer>
+      <>
+        <StatsContainer
+          isActiveStats={isActiveStats}
+          onClick={() => {
+            openStatsModal();
+          }}
+        >
+          <StatsIcon />
+          <StatsLabel isActiveStats={isActiveStats}>Статистика</StatsLabel>
+        </StatsContainer>
+        {isActiveStatsModal && (
+          <AddStatsModal
+            playerStatsProps={playerStatsProps}
+            closeMoreInfoModal={closeStatsModal}
+          />
+        )}
+      </>
     );
   } else {
     return (
