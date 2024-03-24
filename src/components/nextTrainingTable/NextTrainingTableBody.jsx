@@ -5,33 +5,33 @@ import {
 import NextTrainingTableVisitingItem from "./NextTrainingTableVisitingItem";
 import NextTrainingTableMoreInfoItem from "./NextTrainingTableMoreInfoItem";
 import NextTrainingTableStatsItem from "./NextTrainingTableStatsItem";
-const NextTrainingTableBody = ({
-  studentName,
-  datePay,
-  countTraining,
-  isVisiting,
-  isActiveStats,
-  playerStatsProps,
-}) => {
+const NextTrainingTableBody = ({ playerStatsProps }) => {
   return (
-    <CustomTableBody>
-      <CustomTableCellBody>{studentName}</CustomTableCellBody>
-      <CustomTableCellBody>
-        <NextTrainingTableVisitingItem isVisiting={isVisiting} />
-      </CustomTableCellBody>
-      <CustomTableCellBody>{datePay}</CustomTableCellBody>
-      <CustomTableCellBody>{countTraining}</CustomTableCellBody>
-      <CustomTableCellBody>
-        <NextTrainingTableMoreInfoItem playerStatsProps={playerStatsProps} />
-      </CustomTableCellBody>
-      <CustomTableCellBody>
-        <NextTrainingTableStatsItem
-          isActiveStats={isActiveStats}
-          playerStatsProps={playerStatsProps}
-        />
-      </CustomTableCellBody>
-    </CustomTableBody>
+    <>
+      {playerStatsProps.map((player) => (
+        <CustomTableBody>
+          <CustomTableCellBody>{player.name}</CustomTableCellBody>
+          <CustomTableCellBody>
+            <NextTrainingTableVisitingItem isVisiting={player.isVisiting} />
+          </CustomTableCellBody>
+          <CustomTableCellBody>{player.date}</CustomTableCellBody>
+          <CustomTableCellBody>{player.trainingCount}</CustomTableCellBody>
+          <CustomTableCellBody>
+            <NextTrainingTableMoreInfoItem playerStatsProps={player} />
+          </CustomTableCellBody>
+          <CustomTableCellBody>
+            <NextTrainingTableStatsItem
+              isActiveStats={player.isActiveStats}
+              playerStatsProps={player}
+            />
+          </CustomTableCellBody>
+        </CustomTableBody>
+      ))}
+    </>
   );
 };
+
+
+
 
 export default NextTrainingTableBody;

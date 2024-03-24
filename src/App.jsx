@@ -11,12 +11,11 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      
       <Container>
         <SearchField/>
         <Routes>
           <Route path="/" element={<SchedulePage />} />
-          <Route path="/nextTraining" element={<NextTrainingPage />} />
+          <Route path="/next-training" element={<NextTrainingPage />} />
         </Routes>
       </Container>
     </Wrapper>

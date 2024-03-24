@@ -21,10 +21,7 @@ const MoreInfoModal = ({ closeMoreInfoModal, playerStatsProps }) => {
         </InfoPlayer>
         <StatsPlayer>
           <MoreInfoTitle>Статистика игрока</MoreInfoTitle>
-          <StatsBlock>
-            <MoreInfoLabel>Дриблинг</MoreInfoLabel>
-            <MoreInfoStat>{playerStatsProps.dribbling}</MoreInfoStat>
-          </StatsBlock>
+
           <StatsBlock>
             <MoreInfoLabel>Скорость</MoreInfoLabel>
             <MoreInfoStat>{playerStatsProps.speed}</MoreInfoStat>
@@ -36,6 +33,10 @@ const MoreInfoModal = ({ closeMoreInfoModal, playerStatsProps }) => {
           <StatsBlock>
             <MoreInfoLabel>Прыжок</MoreInfoLabel>
             <MoreInfoStat>{playerStatsProps.jump}</MoreInfoStat>
+          </StatsBlock>
+          <StatsBlock>
+            <MoreInfoLabel>Дриблинг</MoreInfoLabel>
+            <MoreInfoStat>{playerStatsProps.dribbling}</MoreInfoStat>
           </StatsBlock>
         </StatsPlayer>
         <CloseIconContainer
