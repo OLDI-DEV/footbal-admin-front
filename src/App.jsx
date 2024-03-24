@@ -12,7 +12,6 @@ function App() {
     <Wrapper>
       <Header />
       <Container>
-        <SearchField/>
         <Routes>
           <Route path="/" element={<SchedulePage />} />
           <Route path="/next-training" element={<NextTrainingPage />} />

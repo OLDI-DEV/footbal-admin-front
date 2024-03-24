@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { TextField } from "@mui/material";
-import { useState } from "react";
-const SearchField = () => {
-  const [searchPlayer, setSearchPlayer] = useState("");
+import { useMemo, useState } from "react";
+import { players } from "../../demoDataPlayers";
+
+const SearchField = ({ search, setSearch }) => {
   return (
     <SearchFieldContainer>
       <CustomTextField
-        defaultValue={searchPlayer}
+        value={search.query}
         label={"Поиск футболиста"}
-        onChange={(e) => setSearchPlayer(e.target.value)}
+        onChange={(e) => setSearch({ ...search, query: e.target.value })}
       />
     </SearchFieldContainer>
   );
